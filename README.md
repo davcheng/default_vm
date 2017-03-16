@@ -1,6 +1,6 @@
 # David's Virtual Machine
 
-Slimmed Down (VM) for messing around with stuff.
+Slimmed Down VM for messing around with stuff.
 
 ## What's included
 
