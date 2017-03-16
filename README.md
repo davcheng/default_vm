@@ -1,14 +1,6 @@
-# Startup Systems Virtual Machine
+# David's Virtual Machine
 
-A common virtual machine (VM) for the class.
-
-## Goals
-
-* We don't want to waste time troubleshooting differing configuration for students' machines.
-* We cannot assume everyone will run a UNIX box (Linux, OSX, etc.).
-* We should make work doable locally as much as we can, for convenience reasons.
-
-The idea is to have students run a VM on whatever their environment is, i.e. Windows, OSX or Linux.
+Slimmed Down (VM) for messing around with stuff.
 
 ## What's included
 
@@ -25,19 +17,18 @@ You will want to have a good internet connection for these. This should only nee
     1. [cmder](http://cmder.net/)
     1. [conemu](https://conemu.github.io/)
     1. [cygwin](https://cygwin.com/)
-1. [Install VirtualBox](https://www.virtualbox.org/wiki/Downloads) (5.1.2 or later).
-1. [Install Vagrant](https://www.vagrantup.com/downloads.html).
-1. Download (or `git clone`) this repository to your computer.
-    * Put it wherever you keep your other projects—we recommend a `startup-systems` folder.
-1. Run the one-time setup from a terminal (if on Windows, make sure you use the terminal you installed above going forward, e.g. cmder):
+2. [Install VirtualBox](https://www.virtualbox.org/wiki/Downloads) (5.1.2 or later).
+3. [Install Vagrant](https://www.vagrantup.com/downloads.html).
+4. Download (or `git clone`) this repository to your computer.
+5. Run the one-time setup from a terminal (if on Windows, make sure you use the terminal you installed above going forward, e.g. cmder):
 
     ```bash
     cd path/to/this/repository/
     vagrant up
     ```
 
-1. The VM should now be running. You can verify this with `vagrant status`.
-1. [Set up your SSH key for Git](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/); you will need it later.
+6. The VM should now be running. You can verify this with `vagrant status`.
+7. [Set up your SSH key for Git](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/); you will need it later.
 
 ## Guest vs host
 
@@ -74,7 +65,7 @@ To work with a Git repository within the VM:
     ```bash
     cd /vagrant
     # clone via SSH
-    git clone git@github.com:startup-systems/<repository>.git
+    git clone <github repo>
     cd <repository name>
     ```
 
@@ -86,8 +77,8 @@ Vagrant lets you share folder between guest and host via the `/vagrant` folder b
 
 ```
 vm/
-- assignment1/
-- assignment2/
+- folder1/
+- folder2/
 ```
 
 ## Updating
@@ -98,7 +89,7 @@ If (you think) there have been changes to this repository on GitHub that aren't 
 # go into this repository directory (on your host machine)
 cd path/to/vm/repository/
 # get the latest configuration
-git pull https://github.com/startup-systems/vm.git master
+git pull <githubrepo> master
 # update your VM
 vagrant provision
 ```
